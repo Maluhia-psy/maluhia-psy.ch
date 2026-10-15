@@ -72,6 +72,7 @@
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
+section[id]{scroll-margin-top:64px}
 :root{--sage:#4a7c6f;--sage-light:#e8f0ee;--sage-mid:#8cb5aa;--warm:#f7f4ef;--dark:#2a2a28;--mid:#5c5c58;--muted:#9a9a94;--border:#e0dbd3}
 body{font-family:'DM Sans',sans-serif;color:var(--dark);background:#fff;overflow-x:hidden}
 nav{display:flex;justify-content:space-between;align-items:center;padding:1.1rem 3rem;border-bottom:1px solid var(--border);background:rgba(255,255,255,.97);position:sticky;top:0;z-index:100}
@@ -188,6 +189,11 @@ hr.rule{border:none;border-top:1px solid var(--border)}
 .blog-ttl{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:400;color:var(--dark);line-height:1.3;margin-bottom:.75rem}
 .blog-desc{font-size:13px;color:var(--mid);line-height:1.6;font-weight:300}
 .blog-coming{text-align:center;padding:2rem;background:var(--sage-light);border-radius:2px}
+.book-inner{max-width:640px;text-align:center}
+.book-tag{justify-content:center}
+.book-div{margin:0 auto 2rem}
+.book-body{font-size:15px;line-height:1.9;color:var(--mid);font-weight:300;margin-bottom:2rem}
+.book-note{font-size:12px;color:var(--muted);margin-top:1.25rem;font-weight:300}
 footer{padding:2.25rem 3rem;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;background:#fff}
 .footer-logo{font-family:'Cormorant Garamond',serif;font-size:20px;color:var(--dark)}
 .footer-copy{font-size:12px;color:var(--muted)}
@@ -281,7 +287,7 @@ footer{padding:2.25rem 3rem;border-top:1px solid var(--border);display:flex;just
       <span class="lang-sep">|</span>
       <button class="lang-btn" data-lang="fr" onclick="setLang('fr')">FR</button>
     </div>
-    <a class="nav-cta" href="#contacto" id="n-cta">Reservar sesión</a>
+    <a class="nav-cta" href="#reservar" id="n-cta">Reservar sesión</a>
   </div>
 </nav>
 
@@ -292,7 +298,7 @@ footer{padding:2.25rem 3rem;border-top:1px solid var(--border);display:flex;just
     <h1 class="hero-h1" id="hero-h1">Un espacio para<br><em>volver a ti</em></h1>
     <p class="hero-body" id="hero-body">Maluhia es una palabra hawaiana que susurra suavemente lo que tantas veces necesitamos y no sabemos nombrar: un momento de paz, un lugar sin juicio, una tregua con uno mismo.</p>
     <div class="hero-actions">
-      <a class="btn-p" href="#contacto" id="hero-cta1">Reservar sesión</a>
+      <a class="btn-p" href="#reservar" id="hero-cta1">Reservar sesión</a>
       <a class="btn-g" href="#sobre" id="hero-cta2">Conocer más</a>
     </div>
   </div>
@@ -367,7 +373,7 @@ footer{padding:2.25rem 3rem;border-top:1px solid var(--border);display:flex;just
       </div>
     </div>
     <div style="text-align:center;margin-top:3rem">
-      <a class="btn-p" href="#contacto" id="how-cta">Reservar primera sesión gratuita</a>
+      <a class="btn-p" href="#reservar" id="how-cta">Reservar primera sesión gratuita</a>
     </div>
   </div>
 </section>
@@ -547,6 +553,19 @@ footer{padding:2.25rem 3rem;border-top:1px solid var(--border);display:flex;just
   </div>
 </section>
 
+<!-- RESERVAR -->
+<hr class="rule">
+<section id="reservar" class="sec-warm">
+  <div class="inner book-inner">
+    <p class="s-tag book-tag" id="book-tag">Primera sesión gratuita</p>
+    <h2 class="s-title" id="book-title">Reserva tus<br><em>30 minutos</em></h2>
+    <div class="s-div book-div"></div>
+    <p class="book-body" id="book-body">Elige el día y la hora que mejor te vengan. Los horarios aparecen en tu zona horaria y recibirás el enlace de Google Meet por correo.</p>
+    <a class="btn-p" href="https://calendar.app.google/Pngg1ZBwZ26bki3w8" target="_blank" rel="noopener" id="book-btn">Ver horarios disponibles</a>
+    <p class="book-note" id="book-note">Si prefieres escribirme antes, más abajo tienes el formulario.</p>
+  </div>
+</section>
+
 <!-- CONTACTO -->
 <section id="contacto" class="sec-sage">
   <div class="inner contact-grid">
@@ -654,6 +673,9 @@ var T = {
     blog3_tag:"Pr\u00f3ximamente", blog3_ttl:"El duelo migratorio que nadie nombra", blog3_desc:"Dejar tu pa\u00eds no es solo un cambio de direcci\u00f3n. Es una p\u00e9rdida que merece ser reconocida y acompa\u00f1ada.",
     blog4_tag:"Pr\u00f3ximamente", blog4_ttl:"Postparto lejos de casa: cuando no hay red", blog4_desc:"Ser madre en el extranjero sin tu familia cerca tiene un peso especial. Hablemos de lo que nadie cuenta del postparto como expatriada.",
     blog_coming:"Art\u00edculos en camino", blog_coming_sub:"Pronto encontrar\u00e1s aqu\u00ed reflexiones, recursos y art\u00edculos para acompa\u00f1arte en tu proceso.",
+    book_tag:"Primera sesi\u00f3n gratuita", book_title:"Reserva tus<br><em>30 minutos</em>",
+    book_body:"Elige el d\u00eda y la hora que mejor te vengan. Los horarios aparecen en tu zona horaria y recibir\u00e1s el enlace de Google Meet por correo.",
+    book_btn:"Ver horarios disponibles", book_note:"Si prefieres escribirme antes, m\u00e1s abajo tienes el formulario.",
     ct_tag:"Contacto", ct_title:"Hablemos<br><em>cuando quieras</em>",
     ct_body:"Eso es Maluhia. Y si te resuena, aqu\u00ed estoy. No hace falta tener todo claro para dar el primer paso.",
     ct_tz:"Suiza (CET). Me adapto a tu zona horaria.",
@@ -713,6 +735,9 @@ var T = {
     blog3_tag:"Coming soon", blog3_ttl:"The migration grief nobody talks about", blog3_desc:"Leaving your country is not just a change of address. It is a loss that deserves to be recognised and supported.",
     blog4_tag:"Coming soon", blog4_ttl:"Postpartum far from home: when there is no support network", blog4_desc:"Being a mother abroad without your family nearby has a special weight. Let\u2019s talk about what nobody tells you about postpartum as an expat.",
     blog_coming:"Articles on their way", blog_coming_sub:"Soon you will find reflections, resources and articles here to accompany you in your process.",
+    book_tag:"Free first session", book_title:"Book your<br><em>30 minutes</em>",
+    book_body:"Choose the day and time that suit you best. Times are shown in your time zone and you\u2019ll get the Google Meet link by email.",
+    book_btn:"See available times", book_note:"If you\u2019d rather write to me first, the form is just below.",
     ct_tag:"Contact", ct_title:"Let\u2019s talk<br><em>whenever you\u2019re ready</em>",
     ct_body:"That is Maluhia. And if it resonates with you, I am here. You don\u2019t need to have everything figured out to take the first step.",
     ct_tz:"Switzerland (CET). I adapt to your time zone.",
@@ -772,6 +797,9 @@ var T = {
     blog3_tag:"Bient\u00f4t", blog3_ttl:"Le deuil migratoire dont personne ne parle", blog3_desc:"Quitter son pays n\u2019est pas seulement un changement d\u2019adresse. C\u2019est une perte qui m\u00e9rite d\u2019\u00eatre reconnue.",
     blog4_tag:"Bient\u00f4t", blog4_ttl:"Post-partum loin de chez soi : quand il n\u2019y a pas de filet", blog4_desc:"Devenir m\u00e8re \u00e0 l\u2019\u00e9tranger sans sa famille pr\u00e8s de soi a un poids particulier.",
     blog_coming:"Articles \u00e0 venir", blog_coming_sub:"Vous trouverez bient\u00f4t ici des r\u00e9flexions, des ressources et des articles pour vous accompagner.",
+    book_tag:"Premi\u00e8re s\u00e9ance gratuite", book_title:"R\u00e9servez vos<br><em>30 minutes</em>",
+    book_body:"Choisissez le jour et l\u2019heure qui vous conviennent. Les horaires s\u2019affichent dans votre fuseau horaire et vous recevrez le lien Google Meet par e-mail.",
+    book_btn:"Voir les disponibilit\u00e9s", book_note:"Si vous pr\u00e9f\u00e9rez m\u2019\u00e9crire d\u2019abord, le formulaire se trouve juste en dessous.",
     ct_tag:"Contact", ct_title:"Parlons-en<br><em>quand vous \u00eates pr\u00eat(e)</em>",
     ct_body:"C\u2019est Maluhia. Et si cela vous parle, je suis l\u00e0. Vous n\u2019avez pas besoin d\u2019avoir tout compris pour faire le premier pas.",
     ct_tz:"Suisse \u00b7 CET (UTC+1/+2)",
@@ -850,6 +878,8 @@ function setLang(l) {
   txt("blog4-tag", t.blog4_tag); txt("blog4-ttl", t.blog4_ttl); txt("blog4-desc", t.blog4_desc);
   txt("blog-coming", t.blog_coming); txt("blog-coming-sub", t.blog_coming_sub);
   // contact
+  txt("book-tag", t.book_tag); htm("book-title", t.book_title);
+  txt("book-body", t.book_body); txt("book-btn", t.book_btn); txt("book-note", t.book_note);
   txt("ct-tag", t.ct_tag); htm("ct-title", t.ct_title);
   txt("ct-body", t.ct_body); txt("ct-tz", t.ct_tz);
   txt("ft-ttl", t.ft_ttl); txt("ft-sub", t.ft_sub);
