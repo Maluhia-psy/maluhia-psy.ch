@@ -618,6 +618,7 @@ footer{padding:2.25rem 3rem;border-top:1px solid var(--border);display:flex;just
     <a href="#sobre" id="fn-about">Sobre mí</a>
     <a href="#servicios" id="fn-svc">Servicios</a>
     <a href="#contacto" id="fn-contact">Contacto</a>
+    <a href="privacidad/" id="fn-privacy" data-href-es="privacidad/" data-href-en="en/privacy/" data-href-fr="fr/confidentialite/">Privacidad</a>
   </nav>
 </footer>
 
@@ -681,7 +682,7 @@ var T = {
     suc_ttl:"\u00a1Mensaje enviado!", suc_sub:"Gracias por escribirme. Te responder\u00e9 en las pr\u00f3ximas 24\u201348 horas.",
     footer:"\u00a9 2026 Maluhia \u00b7 Psicolog\u00eda cl\u00ednica online",
     tag1:"Psicoterapia", tag2:"Neuropsicolog\u00eda", tag3:"Bienestar", tag4:"Expatriados", tag5:"Online",
-    fn_about:"Sobre m\u00ed", fn_svc:"Servicios", fn_contact:"Contacto",
+    fn_about:"Sobre m\u00ed", fn_svc:"Servicios", fn_contact:"Contacto", fn_privacy:"Privacidad",
     err_fill:"Por favor completa nombre, email y mensaje.", err_email:"Por favor introduce un email v\u00e1lido.",
     mail_subj:"Consulta Maluhia"
   },
@@ -743,7 +744,7 @@ var T = {
     suc_ttl:"Message sent!", suc_sub:"Thank you for reaching out. I will get back to you within 24\u201348 hours.",
     footer:"\u00a9 2026 Maluhia \u00b7 Clinical psychology online",
     tag1:"Psychotherapy", tag2:"Neuropsychology", tag3:"Wellbeing", tag4:"Expats", tag5:"Online",
-    fn_about:"About me", fn_svc:"Services", fn_contact:"Contact",
+    fn_about:"About me", fn_svc:"Services", fn_contact:"Contact", fn_privacy:"Privacy",
     err_fill:"Please fill in your name, email and message.", err_email:"Please enter a valid email address.",
     mail_subj:"Maluhia enquiry"
   },
@@ -805,7 +806,7 @@ var T = {
     suc_ttl:"Message envoy\u00e9 !", suc_sub:"Merci de m\u2019avoir \u00e9crit. Je vous r\u00e9pondrai sous 24\u201348 heures.",
     footer:"\u00a9 2026 Maluhia \u00b7 Psychologie clinique en ligne",
     tag1:"Psychoth\u00e9rapie", tag2:"Neuropsychologie", tag3:"Bien-\u00eatre", tag4:"Expatri\u00e9(e)s", tag5:"En ligne",
-    fn_about:"Qui suis-je", fn_svc:"Services", fn_contact:"Contact",
+    fn_about:"Qui suis-je", fn_svc:"Services", fn_contact:"Contact", fn_privacy:"Confidentialit\u00e9",
     err_fill:"Veuillez remplir votre pr\u00e9nom, email et message.", err_email:"Veuillez entrer une adresse email valide.",
     mail_subj:"Contact Maluhia"
   }
@@ -817,7 +818,7 @@ function setLang(l) {
   lang = l;
   document.querySelectorAll(".lang-btn").forEach(function(b) { b.classList.toggle("active", b.dataset.lang === l); });
   document.documentElement.lang = l;
-  document.querySelectorAll(".blog-card").forEach(function(a) { var h = a.getAttribute("data-href-" + l); if (h) a.setAttribute("href", h); });
+  document.querySelectorAll("[data-href-es]").forEach(function(a) { var h = a.getAttribute("data-href-" + l); if (h) a.setAttribute("href", h); });
   var t = T[l];
   function txt(id, v) { var e = document.getElementById(id); if (e && v !== undefined) e.textContent = v; }
   function htm(id, v) { var e = document.getElementById(id); if (e && v !== undefined) e.innerHTML = v; }
@@ -889,7 +890,7 @@ function setLang(l) {
   // footer
   var fc = document.getElementById("footer-copy");
   if (fc) fc.innerHTML = t.footer + ' \u00b7 <span class="footer-domain">maluhia-psy.ch</span>';
-  txt("fn-about", t.fn_about); txt("fn-svc", t.fn_svc); txt("fn-contact", t.fn_contact);
+  txt("fn-about", t.fn_about); txt("fn-svc", t.fn_svc); txt("fn-contact", t.fn_contact); txt("fn-privacy", t.fn_privacy);
   txt("tag1", t.tag1); txt("tag2", t.tag2); txt("tag3", t.tag3); txt("tag4", t.tag4); txt("tag5", t.tag5);
 }
 
