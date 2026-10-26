@@ -190,6 +190,9 @@ hr.rule{border:none;border-top:1px solid var(--border)}
 .blog-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem;margin-bottom:2rem}
 .blog-card{display:block;border:0.5px solid var(--border);border-radius:2px;overflow:hidden;text-decoration:none;color:inherit;transition:border-color .2s}
 .blog-card:hover{border-color:var(--sage-mid)}
+.blog-card-new{grid-column:1/-1}
+.blog-card-new .blog-card-img{height:260px}
+.blog-card-new .blog-card-img img{object-position:center 40%}
 .blog-card-img img{width:100%;height:100%;object-fit:cover;display:block}
 .blog-card-img{height:180px;background:var(--sage-light)}
 .blog-card-body{padding:1.5rem}
@@ -513,6 +516,14 @@ footer{padding:2.25rem 3rem;border-top:1px solid var(--border);display:flex;just
     <h2 class="s-title" id="blog-title">Reflexiones y recursos<br><em>para acompañarte</em></h2>
     <div class="s-div"></div>
     <div class="blog-grid">
+      <a class="blog-card blog-card-new" href="blog/burnout-parental/" data-href-es="blog/burnout-parental/" data-href-en="en/blog/parental-burnout/" data-href-fr="fr/blog/burn-out-parental/">
+        <div class="blog-card-img"><img src="img/blog/burnout-parental-card.jpg" alt="Hombre sentado en un sofá con la mano en la frente, agotado" loading="lazy" width="800" height="400"></div>
+        <div class="blog-card-body">
+          <p class="blog-tag" id="blog5-tag">Nuevo · Leer artículo</p>
+          <p class="blog-ttl" id="blog5-ttl">Burnout parental: cuando ya no puedes más</p>
+          <p class="blog-desc" id="blog5-desc">Cuando criar te deja sin nada y encima te sientes culpable. Qué es el burnout parental y por qué pesa más cuando crías lejos de casa.</p>
+        </div>
+      </a>
       <a class="blog-card" href="blog/tdah-en-adultos/" data-href-es="blog/tdah-en-adultos/" data-href-en="en/blog/adhd-in-adults/" data-href-fr="fr/blog/tdah-adulte/">
         <div class="blog-card-img"><img src="img/blog/tdah-en-adultos-card.jpg" alt="Persona de pie en un acantilado mirando el océano" loading="lazy" width="800" height="400"></div>
         <div class="blog-card-body">
@@ -672,6 +683,7 @@ var T = {
     blog1_tag:"Leer art\u00edculo", blog1_ttl:"TDAH en adultos: cuando por fin todo encaja", blog1_desc:"C\u00f3mo reconocer el TDAH en la edad adulta y por qu\u00e9 muchas personas llegan al diagn\u00f3stico despu\u00e9s de a\u00f1os sin entender qu\u00e9 pasaba.",
     blog2_tag:"Leer art\u00edculo", blog2_ttl:"Burnout: m\u00e1s all\u00e1 del cansancio", blog2_desc:"El agotamiento que no se va con vacaciones. C\u00f3mo identificar el burnout y los primeros pasos para recuperarte.",
     blog3_tag:"Leer art\u00edculo", blog3_ttl:"El duelo migratorio que nadie nombra", blog3_desc:"Dejar tu pa\u00eds no es solo un cambio de direcci\u00f3n. Es una p\u00e9rdida que merece ser reconocida y acompa\u00f1ada.",
+    blog5_tag:"Nuevo \u00b7 Leer art\u00edculo", blog5_ttl:"Burnout parental: cuando ya no puedes m\u00e1s", blog5_desc:"Cuando criar te deja sin nada y encima te sientes culpable. Qu\u00e9 es el burnout parental y por qu\u00e9 pesa m\u00e1s cuando cr\u00edas lejos de casa.",
     blog4_tag:"Leer art\u00edculo", blog4_ttl:"Postparto lejos de casa: cuando no hay red", blog4_desc:"Ser madre en el extranjero sin tu familia cerca tiene un peso especial. Hablemos de lo que nadie cuenta del postparto como expatriada.",
     blog_coming:"M\u00e1s art\u00edculos en camino", blog_coming_sub:"Pronto encontrar\u00e1s aqu\u00ed reflexiones, recursos y art\u00edculos para acompa\u00f1arte en tu proceso.",
     book_tag:"Primera sesi\u00f3n gratuita", book_title:"Reserva tus<br><em>30 minutos</em>",
@@ -734,6 +746,7 @@ var T = {
     blog1_tag:"Read article", blog1_ttl:"ADHD in adults: when everything finally makes sense", blog1_desc:"How to recognise ADHD in adulthood and why many people reach diagnosis after years of not understanding what was happening.",
     blog2_tag:"Read article", blog2_ttl:"Burnout: beyond tiredness", blog2_desc:"The exhaustion that does not go away with holidays. How to identify burnout and the first steps to recover.",
     blog3_tag:"Read article", blog3_ttl:"The migration grief nobody talks about", blog3_desc:"Leaving your country is not just a change of address. It is a loss that deserves to be recognised and supported.",
+    blog5_tag:"New \u00b7 Read article", blog5_ttl:"Parental burnout: when you have nothing left", blog5_desc:"When raising children leaves you with nothing left, and you feel guilty on top of it. What parental burnout is and why it weighs more far from home.",
     blog4_tag:"Read article", blog4_ttl:"Postpartum far from home: when there is no support network", blog4_desc:"Being a mother abroad without your family nearby has a special weight. Let\u2019s talk about what nobody tells you about postpartum as an expat.",
     blog_coming:"More articles on their way", blog_coming_sub:"Soon you will find reflections, resources and articles here to accompany you in your process.",
     book_tag:"Free first session", book_title:"Book your<br><em>30 minutes</em>",
@@ -796,6 +809,7 @@ var T = {
     blog1_tag:"Lire l\u2019article", blog1_ttl:"TDAH chez l\u2019adulte : quand tout s\u2019\u00e9claire enfin", blog1_desc:"Comment reconna\u00eetre le TDAH \u00e0 l\u2019\u00e2ge adulte et pourquoi beaucoup de personnes arrivent au diagnostic apr\u00e8s des ann\u00e9es sans comprendre.",
     blog2_tag:"Lire l\u2019article", blog2_ttl:"Burnout : au-del\u00e0 de la fatigue", blog2_desc:"L\u2019\u00e9puisement qui ne part pas avec les vacances. Comment identifier le burnout et les premiers pas pour s\u2019en remettre.",
     blog3_tag:"Lire l\u2019article", blog3_ttl:"Le deuil migratoire dont personne ne parle", blog3_desc:"Quitter son pays n\u2019est pas seulement un changement d\u2019adresse. C\u2019est une perte qui m\u00e9rite d\u2019\u00eatre reconnue.",
+    blog5_tag:"Nouveau \u00b7 Lire l\u2019article", blog5_ttl:"Burn-out parental : quand on n\u2019en peut plus", blog5_desc:"Quand \u00e9lever ses enfants vous vide et qu\u2019en plus vous culpabilisez. Ce qu\u2019est le burn-out parental et pourquoi il p\u00e8se davantage loin de chez soi.",
     blog4_tag:"Lire l\u2019article", blog4_ttl:"Post-partum loin de chez soi : quand il n\u2019y a pas de filet", blog4_desc:"Devenir m\u00e8re \u00e0 l\u2019\u00e9tranger sans sa famille pr\u00e8s de soi a un poids particulier.",
     blog_coming:"D\u2019autres articles \u00e0 venir", blog_coming_sub:"Vous trouverez bient\u00f4t ici des r\u00e9flexions, des ressources et des articles pour vous accompagner.",
     book_tag:"Premi\u00e8re s\u00e9ance gratuite", book_title:"R\u00e9servez vos<br><em>30 minutes</em>",
@@ -877,6 +891,7 @@ function setLang(l) {
   txt("blog1-tag", t.blog1_tag); txt("blog1-ttl", t.blog1_ttl); txt("blog1-desc", t.blog1_desc);
   txt("blog2-tag", t.blog2_tag); txt("blog2-ttl", t.blog2_ttl); txt("blog2-desc", t.blog2_desc);
   txt("blog3-tag", t.blog3_tag); txt("blog3-ttl", t.blog3_ttl); txt("blog3-desc", t.blog3_desc);
+  txt("blog5-tag", t.blog5_tag); txt("blog5-ttl", t.blog5_ttl); txt("blog5-desc", t.blog5_desc);
   txt("blog4-tag", t.blog4_tag); txt("blog4-ttl", t.blog4_ttl); txt("blog4-desc", t.blog4_desc);
   txt("blog-coming", t.blog_coming); txt("blog-coming-sub", t.blog_coming_sub);
   // contact

@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://maluhia-psy.ch/</loc>
-    <lastmod>2026-10-15</lastmod>
+    <lastmod>2026-10-26</lastmod>
   </url>
   <url>
     <loc>https://maluhia-psy.ch/blog/tdah-en-adultos/</loc>
@@ -51,5 +51,17 @@
   <url>
     <loc>https://maluhia-psy.ch/fr/blog/post-partum-loin-de-chez-soi/</loc>
     <lastmod>2026-10-15</lastmod>
+  </url>
+  <url>
+    <loc>https://maluhia-psy.ch/blog/burnout-parental/</loc>
+    <lastmod>2026-10-26</lastmod>
+  </url>
+  <url>
+    <loc>https://maluhia-psy.ch/en/blog/parental-burnout/</loc>
+    <lastmod>2026-10-26</lastmod>
+  </url>
+  <url>
+    <loc>https://maluhia-psy.ch/fr/blog/burn-out-parental/</loc>
+    <lastmod>2026-10-26</lastmod>
   </url>
 </urlset>
