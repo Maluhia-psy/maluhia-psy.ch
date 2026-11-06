@@ -135,7 +135,7 @@ hr.rule{border:none;border-top:1px solid var(--border)}
 .success-icon{width:52px;height:52px;border-radius:50%;background:var(--sage-light);display:flex;align-items:center;justify-content:center;margin:0 auto 1rem}
 .success-ttl{font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:300;color:var(--dark);margin-bottom:.5rem}
 .success-sub{font-size:14px;color:var(--mid);font-weight:300}
-.blog-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem;margin-bottom:2rem}
+.blog-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem;margin-bottom:2rem}.blog-grid .blog-card:last-child:nth-child(odd){grid-column:1/-1}
 .blog-card{border:0.5px solid var(--border);border-radius:2px;overflow:hidden}
 .blog-card-img{height:160px;display:flex;align-items:center;justify-content:center}
 .blog-card-body{padding:1.5rem}
@@ -482,6 +482,16 @@ footer{padding:2.25rem 3rem;border-top:1px solid var(--border);display:flex;just
           <p class="blog-tag" id="blog3-tag">Expatriados</p>
           <p class="blog-ttl" id="blog3-ttl">El duelo migratorio que nadie nombra</p>
           <p class="blog-desc" id="blog3-desc">Dejar tu país no es solo un cambio de dirección. Es una pérdida que merece ser reconocida y acompañada.</p>
+        </div>
+      </a>
+      <a class="blog-card" href="/blog/burnout-parental/" style="text-decoration:none;color:inherit;display:block">
+        <div class="blog-card-img" style="background:linear-gradient(135deg,#f5f0e8,#e8d5b8)">
+          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#9a7a4a" stroke-width="1"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
+        <div class="blog-card-body">
+          <p class="blog-tag">Maternidad</p>
+          <p class="blog-ttl">Burnout parental: cuando ya no puedes más</p>
+          <p class="blog-desc">El agotamiento que no se va con descanso y afecta a madres y padres. Sus señales, por qué es más frecuente lejos de casa y cómo se sale.</p>
         </div>
       </a>
       <a class="blog-card" href="/blog/postparto-lejos-de-casa/" style="text-decoration:none;color:inherit;display:block">
