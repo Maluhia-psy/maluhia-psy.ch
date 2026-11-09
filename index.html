@@ -437,6 +437,7 @@ footer{padding:2.25rem 3rem;border-top:1px solid var(--border);display:flex;just
         <div style="display:flex;flex-direction:column;gap:.6rem">
           <div style="display:flex;gap:.6rem;align-items:flex-start"><span style="color:var(--sage);">•</span><p id="cred-col" style="font-size:13px;color:var(--mid);line-height:1.5;font-weight:300"><span style="font-weight:500;color:var(--dark)">Colegiada en España</span> · Acreditación clínica P-02055</p></div>
           <div style="display:flex;gap:.6rem;align-items:flex-start"><span style="color:var(--sage);">•</span><p id="cred-fsp" style="font-size:13px;color:var(--mid);line-height:1.5;font-weight:300"><span style="font-weight:500;color:var(--dark)">FSP Suiza</span> · Acreditación en trámites</p></div>
+          <div style="display:flex;gap:.6rem;align-items:flex-start"><span style="color:var(--sage);">•</span><p id="cred-san" style="font-size:13px;color:var(--mid);line-height:1.5;font-weight:300"><span style="font-weight:500;color:var(--dark)">Acreditación sanitaria</span> · Servicio Canario de la Salud · Profesional de la Psicología</p></div>
         </div>
       </div>
     </div>
@@ -609,6 +610,7 @@ var T = {
     cred_title:"Acreditaciones",
     cred_col:"<span style=\"font-weight:500;color:var(--dark)\">Colegiada en Espa\u00f1a</span> \u00b7 Acreditaci\u00f3n cl\u00ednica P-02055",
     cred_fsp:"<span style=\"font-weight:500;color:var(--dark)\">FSP Suiza</span> \u00b7 Acreditaci\u00f3n en tr\u00e1mites",
+    cred_san:"<span style=\"font-weight:500;color:var(--dark)\">Acreditaci\u00f3n sanitaria \u00b7 Espa\u00f1a</span> \u00b7 Servicio Canario de la Salud \u00b7 Profesional de la Psicolog\u00eda",
     blog_tag:"Blog", blog_title:"Reflexiones y recursos<br><em>para acompa\u00f1arte</em>",
     blog1_tag:"Pr\u00f3ximamente", blog1_ttl:"TDAH en adultos: cuando por fin todo encaja", blog1_desc:"C\u00f3mo reconocer el TDAH en la edad adulta y por qu\u00e9 muchas personas llegan al diagn\u00f3stico despu\u00e9s de a\u00f1os sin entender qu\u00e9 pasaba.",
     blog2_tag:"Pr\u00f3ximamente", blog2_ttl:"Burnout: m\u00e1s all\u00e1 del cansancio", blog2_desc:"El agotamiento que no se va con vacaciones. C\u00f3mo identificar el burnout y los primeros pasos para recuperarte.",
@@ -668,6 +670,7 @@ var T = {
     cred_title:"Credentials",
     cred_col:"<span style=\"font-weight:500;color:var(--dark)\">Registered in Spain</span> \u00b7 Clinical accreditation P-02055",
     cred_fsp:"<span style=\"font-weight:500;color:var(--dark)\">FSP Switzerland</span> \u00b7 Accreditation in progress",
+    cred_san:"<span style=\"font-weight:500;color:var(--dark)\">Healthcare accreditation \u00b7 Spain</span> \u00b7 Canary Islands Health Service \u00b7 Clinical Psychologist",
     blog_tag:"Blog", blog_title:"Reflections and resources<br><em>to accompany you</em>",
     blog1_tag:"Coming soon", blog1_ttl:"ADHD in adults: when everything finally makes sense", blog1_desc:"How to recognise ADHD in adulthood and why many people reach diagnosis after years of not understanding what was happening.",
     blog2_tag:"Coming soon", blog2_ttl:"Burnout: beyond tiredness", blog2_desc:"The exhaustion that does not go away with holidays. How to identify burnout and the first steps to recover.",
@@ -727,6 +730,7 @@ var T = {
     cred_title:"Accr\u00e9ditations",
     cred_col:"<span style=\"font-weight:500;color:var(--dark)\">Membre du Coll\u00e8ge des Psychologues d\u2019Espagne</span> \u00b7 Accr\u00e9ditation clinique P-02055",
     cred_fsp:"<span style=\"font-weight:500;color:var(--dark)\">FSP Suisse</span> \u00b7 Accr\u00e9ditation en cours",
+    cred_san:"<span style=\"font-weight:500;color:var(--dark)\">Accr\u00e9ditation sanitaire \u00b7 Espagne</span> \u00b7 Service de Sant\u00e9 des \u00celes Canaries \u00b7 Psychologue clinicienne",
     blog_tag:"Blog", blog_title:"R\u00e9flexions et ressources<br><em>pour vous accompagner</em>",
     blog1_tag:"Bient\u00f4t", blog1_ttl:"TDAH chez l\u2019adulte : quand tout s\u2019\u00e9claire enfin", blog1_desc:"Comment reconna\u00eetre le TDAH \u00e0 l\u2019\u00e2ge adulte et pourquoi beaucoup de personnes arrivent au diagnostic apr\u00e8s des ann\u00e9es sans comprendre.",
     blog2_tag:"Bient\u00f4t", blog2_ttl:"Burnout : au-del\u00e0 de la fatigue", blog2_desc:"L\u2019\u00e9puisement qui ne part pas avec les vacances. Comment identifier le burnout et les premiers pas pour s\u2019en remettre.",
@@ -803,6 +807,7 @@ function setLang(l) {
   txt("cred-title", t.cred_title);
   var cc = document.getElementById("cred-col"); if (cc) cc.innerHTML = t.cred_col;
   var cf = document.getElementById("cred-fsp"); if (cf) cf.innerHTML = t.cred_fsp;
+  var cs = document.getElementById("cred-san"); if (cs && t.cred_san) cs.innerHTML = t.cred_san;
   // blog
   txt("blog-tag", t.blog_tag); htm("blog-title", t.blog_title);
   txt("blog1-tag", t.blog1_tag); txt("blog1-ttl", t.blog1_ttl); txt("blog1-desc", t.blog1_desc);
