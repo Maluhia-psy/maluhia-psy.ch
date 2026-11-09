@@ -521,6 +521,7 @@ footer{padding:2.25rem 3rem;border-top:1px solid var(--border);display:flex;just
       <div class="cd-list">
         <div class="cd-row"><div class="cd-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div><div><span class="cd-label">Email</span><span class="cd-val">info@maluhia-psy.ch</span></div></div>
         <div class="cd-row"><div class="cd-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.13h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.73a16 16 0 0 0 6 6l.95-.96a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div><div><span class="cd-label">Teléfono</span><span class="cd-val">+41 79 401 25 40</span></div></div>
+        <div class="cd-row"><div class="cd-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div><div><span class="cd-label" id="ct-hours-lbl">Horario</span><span class="cd-val" id="ct-hours">Lun – Vie · 9:00 – 20:00</span></div></div>
         <div class="cd-row"><div class="cd-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div><div><span class="cd-label">Zona horaria</span><span class="cd-val" id="ct-tz">Suiza · CET (UTC+1/+2)</span></div></div>
       </div>
       <div class="socials">
@@ -619,6 +620,7 @@ var T = {
     blog_coming:"Art\u00edculos en camino", blog_coming_sub:"Pronto encontrar\u00e1s aqu\u00ed reflexiones, recursos y art\u00edculos para acompa\u00f1arte en tu proceso.",
     ct_tag:"Contacto", ct_title:"Hablemos<br><em>cuando quieras</em>",
     ct_body:"Eso es Maluhia. Y si te resuena, aqu\u00ed estoy. No hace falta tener todo claro para dar el primer paso.",
+    ct_hours_lbl:"Horario", ct_hours:"Lun \u2013 Vie \u00b7 9:00 \u2013 20:00",
     ct_tz:"Suiza \u00b7 CET (UTC+1/+2)",
     ft_ttl:"Escr\u00edbeme", ft_sub:"Respondo en un plazo de 24\u201348 horas.",
     lbl_name:"Nombre", lbl_last:"Apellido", lbl_email:"Email", lbl_lang:"Idioma preferido", lbl_msg:"Mensaje",
@@ -679,6 +681,7 @@ var T = {
     blog_coming:"Articles on their way", blog_coming_sub:"Soon you will find reflections, resources and articles here to accompany you in your process.",
     ct_tag:"Contact", ct_title:"Let\u2019s talk<br><em>whenever you\u2019re ready</em>",
     ct_body:"That is Maluhia. And if it resonates with you, I am here. You don\u2019t need to have everything figured out to take the first step.",
+    ct_hours_lbl:"Hours", ct_hours:"Mon \u2013 Fri \u00b7 9:00 \u2013 20:00",
     ct_tz:"Switzerland \u00b7 CET (UTC+1/+2)",
     ft_ttl:"Write to me", ft_sub:"I respond within 24\u201348 hours.",
     lbl_name:"First name", lbl_last:"Last name", lbl_email:"Email", lbl_lang:"Preferred language", lbl_msg:"Message",
@@ -739,6 +742,7 @@ var T = {
     blog_coming:"Articles \u00e0 venir", blog_coming_sub:"Vous trouverez bient\u00f4t ici des r\u00e9flexions, des ressources et des articles pour vous accompagner.",
     ct_tag:"Contact", ct_title:"Parlons-en<br><em>quand vous \u00eates pr\u00eat(e)</em>",
     ct_body:"C\u2019est Maluhia. Et si cela vous parle, je suis l\u00e0. Vous n\u2019avez pas besoin d\u2019avoir tout compris pour faire le premier pas.",
+    ct_hours_lbl:"Horaires", ct_hours:"Lun \u2013 Ven \u00b7 9h00 \u2013 20h00",
     ct_tz:"Suisse \u00b7 CET (UTC+1/+2)",
     ft_ttl:"\u00c9crivez-moi", ft_sub:"Je r\u00e9ponds sous 24\u201348 heures.",
     lbl_name:"Pr\u00e9nom", lbl_last:"Nom", lbl_email:"Email", lbl_lang:"Langue pr\u00e9f\u00e9r\u00e9e", lbl_msg:"Message",
@@ -817,7 +821,7 @@ function setLang(l) {
   txt("blog-coming", t.blog_coming); txt("blog-coming-sub", t.blog_coming_sub);
   // contact
   txt("ct-tag", t.ct_tag); htm("ct-title", t.ct_title);
-  txt("ct-body", t.ct_body); txt("ct-tz", t.ct_tz);
+  txt("ct-body", t.ct_body); txt("ct-hours-lbl", t.ct_hours_lbl); txt("ct-hours", t.ct_hours); txt("ct-tz", t.ct_tz);
   txt("ft-ttl", t.ft_ttl); txt("ft-sub", t.ft_sub);
   // form labels
   txt("lbl-name", t.lbl_name); txt("lbl-last", t.lbl_last);
