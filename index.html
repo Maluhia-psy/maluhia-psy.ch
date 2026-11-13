@@ -93,6 +93,11 @@ nav{display:flex;justify-content:space-between;align-items:center;padding:1.1rem
 .lang-sep{color:var(--border);font-size:14px;user-select:none}
 .nav-cta{font-size:11px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;padding:9px 20px;background:var(--sage);color:#fff;border:none;border-radius:2px;cursor:pointer;text-decoration:none;transition:background .2s}
 .nav-cta:hover{background:#3a6358}
+.nav-toggle{display:none;flex-direction:column;justify-content:center;align-items:center;gap:5px;width:36px;height:36px;padding:0;margin-right:-6px;background:none;border:none;cursor:pointer}
+.nav-toggle span{display:block;width:20px;height:1.5px;background:var(--dark);transition:transform .2s,opacity .2s}
+.nav-toggle[aria-expanded="true"] span:nth-child(1){transform:translateY(6.5px) rotate(45deg)}
+.nav-toggle[aria-expanded="true"] span:nth-child(2){opacity:0}
+.nav-toggle[aria-expanded="true"] span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg)}
 .hero{display:grid;grid-template-columns:1fr 1fr;min-height:92vh;background:#fff}
 .hero-left{display:flex;flex-direction:column;justify-content:center;padding:5rem 4rem 5rem 3rem;background:#fff}
 .hero-tag{font-size:11px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--sage);margin-bottom:1.75rem;display:flex;align-items:center;gap:10px}
@@ -227,6 +232,11 @@ footer{padding:2.25rem 3rem;border-top:1px solid var(--border);display:flex;just
 @media (max-width: 768px) {
   nav {padding: 1rem 1.25rem;}
   .nav-links {display: none;}
+  .nav-toggle {display: flex;}
+  .nav-links.open {display: flex; flex-direction: column; gap: 0; position: absolute; top: 100%; left: 0; right: 0; background: #fff; border-bottom: 1px solid var(--border); box-shadow: 0 12px 24px rgba(42,42,40,.08); padding: .25rem 1.25rem .75rem;}
+  .nav-links.open li {border-bottom: 1px solid var(--border);}
+  .nav-links.open li:last-child {border-bottom: none;}
+  .nav-links.open a {display: block; padding: .95rem 0; font-size: 12px; color: var(--dark);}
   .nav-right {gap: 10px;}
   .lang-btn {font-size: 11px; padding: 2px 3px;}
   .nav-cta {padding: 7px 14px; font-size: 10px;}
@@ -288,6 +298,11 @@ footer{padding:2.25rem 3rem;border-top:1px solid var(--border);display:flex;just
   .stats {grid-template-columns: repeat(2,1fr);}
   .stat-n {font-size: 22px;}
   nav {padding: 0.9rem 1rem;}
+  .nav-right {gap: 6px;}
+  .lang-sw {gap: 2px;}
+  .lang-btn {padding: 2px;}
+  .nav-cta {padding: 7px 10px; letter-spacing: .08em;}
+  .nav-toggle {width: 32px; margin-right: -4px;}
 }
 </style>
 </head>
@@ -295,7 +310,7 @@ footer{padding:2.25rem 3rem;border-top:1px solid var(--border);display:flex;just
 
 <nav>
   <a class="nav-logo" href="#">Maluhia</a>
-  <ul class="nav-links">
+  <ul class="nav-links" id="nav-links">
     <li><a href="#sobre" id="n-about">Sobre mí</a></li>
     <li><a href="#como-funciona" id="n-how">Cómo funciona</a></li>
     <li><a href="#servicios" id="n-svc">Servicios</a></li>
@@ -313,6 +328,7 @@ footer{padding:2.25rem 3rem;border-top:1px solid var(--border);display:flex;just
       <button class="lang-btn" data-lang="fr" onclick="setLang('fr')">FR</button>
     </div>
     <a class="nav-cta" href="#reservar" id="n-cta">Reservar sesión</a>
+    <button class="nav-toggle" id="nav-toggle" type="button" aria-label="Menú" aria-expanded="false" aria-controls="nav-links" onclick="toggleNav()"><span></span><span></span><span></span></button>
   </div>
 </nav>
 
@@ -686,6 +702,7 @@ footer{padding:2.25rem 3rem;border-top:1px solid var(--border);display:flex;just
   <nav class="footer-nav">
     <a href="#sobre" id="fn-about">Sobre mí</a>
     <a href="#servicios" id="fn-svc">Servicios</a>
+    <a href="#formacion" id="fn-form">Formación</a>
     <a href="#contacto" id="fn-contact">Contacto</a>
     <a href="privacidad/" id="fn-privacy" data-href-es="privacidad/" data-href-en="en/privacy/" data-href-fr="fr/confidentialite/">Privacidad</a>
   </nav>
@@ -935,6 +952,7 @@ function setLang(l) {
   txt("n-about", t.n_about); txt("n-how", t.n_how); txt("n-svc", t.n_svc);
   txt("n-areas", t.n_areas); txt("n-form", t.n_form); txt("n-blog", t.n_blog);
   txt("n-contact", t.n_contact); txt("n-cta", t.n_cta);
+  var nt = document.getElementById("nav-toggle"); if (nt) nt.setAttribute("aria-label", l === "es" ? "Menú" : "Menu");
   // hero
   txt("hero-tag", t.hero_tag); htm("hero-h1", t.hero_h1);
   txt("hero-body", t.hero_body); txt("hero-cta1", t.hero_cta1); txt("hero-cta2", t.hero_cta2);
@@ -1010,7 +1028,7 @@ function setLang(l) {
   // footer
   var fc = document.getElementById("footer-copy");
   if (fc) fc.innerHTML = t.footer + ' \u00b7 <span class="footer-domain">maluhia-psy.ch</span>';
-  txt("fn-about", t.fn_about); txt("fn-svc", t.fn_svc); txt("fn-contact", t.fn_contact); txt("fn-privacy", t.fn_privacy);
+  txt("fn-about", t.fn_about); txt("fn-svc", t.fn_svc); txt("fn-form", t.n_form); txt("fn-contact", t.fn_contact); txt("fn-privacy", t.fn_privacy);
   txt("tag1", t.tag1); txt("tag2", t.tag2); txt("tag3", t.tag3); txt("tag4", t.tag4); txt("tag5", t.tag5);
 }
 
@@ -1036,6 +1054,16 @@ function submitForm() {
   }, 600);
 }
 // Open the page in another language with ?lang=en or ?lang=fr (used by the blog)
+function toggleNav(open) {
+  var ul = document.getElementById("nav-links"), b = document.getElementById("nav-toggle");
+  if (!ul || !b) return;
+  if (typeof open !== "boolean") open = !ul.classList.contains("open");
+  ul.classList.toggle("open", open);
+  b.setAttribute("aria-expanded", open ? "true" : "false");
+}
+document.querySelectorAll("#nav-links a").forEach(function(a) { a.addEventListener("click", function() { toggleNav(false); }); });
+document.addEventListener("keydown", function(e) { if (e.key === "Escape") toggleNav(false); });
+document.addEventListener("click", function(e) { if (!e.target.closest("nav")) toggleNav(false); });
 (function() { try { var q = new URLSearchParams(window.location.search).get("lang"); if (q && T[q] && q !== "es") setLang(q); } catch (e) {} })();
 </script>
 </body>
